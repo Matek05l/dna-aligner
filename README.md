@@ -1,24 +1,38 @@
-# Introduction 
-DNA Aligner
+# DNA Sequence Aligner
 
-## Files
-* main - all from files
-* Scoringmatrix - load matrices from file
-* 
+A C++ command-line tool for pairwise biological sequence alignment.  
+Implements **Needleman-Wunsch** (global) and **Smith-Waterman** (local) algorithms.
 
+## Features
 
-## DATA
-### N
-NM_131263 - danio rerio
-NM_007293 - Human
+- Global alignment — Needleman-Wunsch algorithm
+- Local alignment — Smith-Waterman algorithm
+- FASTA file parsing (multi-sequence files supported)
+- BLOSUM62 substitution matrix for protein sequences
+- Alignment visualization with match/mismatch/gap indicators
+- Identity percentage calculation
 
-### Hemoglobin
-NP_000549 - hemoglobin subunit alpha 
-NP_001159414.1 - tRNA (cytosine(72)-C(5))-methyltransferase NSUN6 isoform b
+## Project Structure
+dna-aligner/
+├── include/
+│ ├── aligner/ # NeedlemanWunsch, SmithWaterman, ScoringMatrix
+│ ├── fasta/ # FastaParser
+│ └── utils/ # AlignmentResult, Printer
+├── src/ # implementations
+├── data/ # sample FASTA files
+├── matrices/ # BLOSUM62 substitution matrix
+└── tests/ # unit tests
+## Sample Data
 
-# class and structures
+| File | Organism | Source |
+|------|----------|--------|
+| `data/dna.fasta` | *Danio rerio* / *Homo sapiens* BRCA1 | NCBI NM_131263, NM_007293 |
+| `data/protein.fasta` | Hemoglobin alpha | NCBI NP_000549 |
 
-## SM.h (struct) -  ScoringMatrix
-## AR.h (struct) - AlignemtResult
-## FP.h (Class) - FastaParser
-## NW.h (class) - ASresult
+## Algorithms
+
+**Needleman-Wunsch** — global alignment. Aligns two sequences end-to-end.  
+Best used when sequences are of similar length.
+
+**Smith-Waterman** — local alignment. Finds the best matching subsequence.  
+Best used when one sequence may be a fragment of another.
