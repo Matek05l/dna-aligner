@@ -39,8 +39,9 @@ void NeedlemanWunsch::fillMatrix(const std::string& seq1, const std::string& seq
 	for (size_t i = 1; i < rows; i++) {
 		for (size_t j = 1; j < cols; j++)
 		{
-			// diagonal
+
 			int gsp = seq1[i - 1] == seq2[j - 1] ? matchScore : mismatchPenalty;
+			// diagonal
 			int ScoreDiag = dpMatrix[i - 1][j - 1] + gsp;
 
 			// up
