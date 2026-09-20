@@ -26,9 +26,6 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\utils\AlignmentResult.cpp" />
     <ClCompile Include="src\utils\Printer.cpp" />
-    <ClCompile Include="tests\tfp.cpp" />
-    <ClCompile Include="tests\tnmw.cpp" />
-    <ClCompile Include="tests\tsw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="matrices\BLOSUM62.txt" />

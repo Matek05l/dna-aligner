@@ -21,15 +21,6 @@
     <ClCompile Include="src\fasta\FastaParser.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="tests\tfp.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="tests\tsw.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="tests\tnmw.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="src\utils\AlignmentResult.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
