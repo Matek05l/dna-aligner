@@ -4,6 +4,7 @@
 #include "../include/fasta/FastaParser.h"
 #include "../include/aligner/ScoringMatrix.h"
 #include "../include/aligner/NeedlemanWunsch.h"
+#include "../include/aligner/SmithWaterman.h"
 #include "../include/utils/Printer.h"
 
 using namespace std;
@@ -37,10 +38,16 @@ int main()
     */
     cout << "---- NWA ---- \n";
     NeedlemanWunsch nwalgorithm(1, -1, -1);
+    SmithWaterman swalgorithm(3, -1, -2);
 
-    AlignmentResult result = nwalgorithm.align(sequence1, sequence2);
+    AlignmentResult sr1 = nwalgorithm.align(sequence1, sequence2);
 
-    Printer showp;
-    showp.print(result);
+    AlignmentResult sr2 = swalgorithm.align(sequence1, sequence2);
+    Printer::print(sr2);
+    cout << "---------------------------" << endl;
+    cout << "---- SWA ----\n";
+    Printer::print(sr2);
+
+    return 0;
 }
     
